@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+	<name>30 character coupon codes</name>
+	<code>ttl_coupon_codes_thirty</code>
+	<version>1.1</version>
+	<author>Move Digital</author>
+	<link>http://www.movedigital.com.au</link>
+	<file path="admin/controller/marketing/coupon.php">
+		<operation>
+			<search>
+				<![CDATA[if ((utf8_strlen($this->request->post['code']) < 3) || (utf8_strlen($this->request->post['code']) > 10)) {]]>
+			</search>
+			<add position="replace">
+				<![CDATA[if ((utf8_strlen($this->request->post['code']) < 3) || (utf8_strlen($this->request->post['code']) > 30)) {]]>
+			</add>
+		</operation>
+	</file>
+</modification>
